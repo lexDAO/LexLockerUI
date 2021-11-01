@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {useState} from "react";
+import {BigNumber} from "ethers";
 import { Form, Button, Input, Icon, Header, Loader, Label } from "semantic-ui-react";
 import Layout from "../../components/Layout";
 import instance from "../../instance";
@@ -97,8 +98,8 @@ class App extends Component {
         <Form onSubmit={this.deposit}>
 
           <Form.Field>
-            <Label>Token Address
-              <Label.Detail>What is the address of the token you are depositing?</Label.Detail>
+            <Label>
+              <Label.Detail>Deposit token address?</Label.Detail>
             </Label>
             <Input
               name="token"
@@ -110,8 +111,8 @@ class App extends Component {
           </Form.Field>
 
           <Form.Field>
-            <Label>Deposit Amount
-              <Label.Detail>How much are you depositing?</Label.Detail>
+            <Label>
+              <Label.Detail>How much?</Label.Detail>
             </Label>
             <Input
               name="amount"
@@ -123,8 +124,8 @@ class App extends Component {
           </Form.Field>
 
           <Form.Field>
-            <Label>Receiver Address
-              <Label.Detail>What is the address for the account that will receive payment?</Label.Detail>
+            <Label>
+              <Label.Detail>What address will receive deposit?</Label.Detail>
             </Label>
             <Input
               name="receiver"
@@ -136,8 +137,8 @@ class App extends Component {
           </Form.Field>
 
           <Form.Field>
-            <Label>Resolver Address
-              <Label.Detail>What is the address of the account that will resolve any disputes?</Label.Detail>
+            <Label>
+              <Label.Detail>What address will resolve disputes?</Label.Detail>
             </Label>
             <Input
               name="resolver"
@@ -149,14 +150,14 @@ class App extends Component {
           </Form.Field>
 
           <Form.Field>
-            <Label>Termination
+            <Label>
               <Label.Detail>What is the cutoff date/time for depositor claiming back funds?</Label.Detail>
             </Label>
             <TerminationDate />
           </Form.Field>
 
           <Form.Field>
-            <Label>Details
+            <Label>
               <Label.Detail>Please briefly describe the reason for the deposit.</Label.Detail>
             </Label>
             <Input
